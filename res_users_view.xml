@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		 <!-- Переопределяем форму пользователей - дописываем туда поле с паспортными данными
+		--> 
+		<record id="view_users_form" model="ir.ui.view"> 
+			<field name="name">res.users.form</field> 
+			<field name="model">account.res_users</field> 
+			<field name="inherit_id" ref="base.view_users_form" /> 
+			<field name="arch" type="xml">
+				<data>
+					<field name="email" position="before">
+						<field name="pasport"/> 
+					</field>
+				</data>
+			</field>
+		</record>
+
+	</data>
+</odoo>
